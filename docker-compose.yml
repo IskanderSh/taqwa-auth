@@ -1,0 +1,18 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    container_name: mongodb
+
+  auth:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: auth
+    image: auth
+    depends_on:
+      - mongodb
+    environment:
+      CONFIG_PATH: ./config/local.yaml

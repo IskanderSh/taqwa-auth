@@ -1,0 +1,10 @@
+env: "local"
+log_level: "debug"
+token:
+  ttl: 240h
+  secret: llkjoiw78937k
+grpc:
+  port: 44044
+  timeout: 10h
+db:
+  port: 27017
